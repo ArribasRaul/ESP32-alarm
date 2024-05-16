@@ -1,18 +1,18 @@
-# Sistema de Seguridad basado en Nodos IoT con ESP32
+# IoT Node-Based Security System with ESP32
 
-Este proyecto implementa un sistema de seguridad completo utilizando nodos IoT con ESP32. El sistema consta de tres partes principales: el nodo maestro, el nodo esclavo y una aplicación móvil.
+This project implements a comprehensive security system using IoT nodes with ESP32. The system consists of three main parts: the master node, the slave node, and a mobile application.
 
-## Carpetas del Proyecto
+## Project Folders
 
-- `Main_maestro`: Contiene el código para el primer ESP32 del nodo maestro, encargado de la comunicación con la aplicación y el control de dispositivos como el módulo RFID y el teclado 4x4.
-- `Main_altavoz`: Contiene el código para el segundo ESP32 del nodo maestro, responsable de la comunicación con el nodo esclavo y la activación del módulo DFPlayer Mini para el altavoz de la alarma.
-- `Main_esclavo`: Contiene el código para el nodo esclavo, que detecta movimiento y la apertura de puertas, enviando alertas al nodo maestro.
-- `app`: Contiene el código de la aplicación móvil desarrollada en Python con las librerías Tkinter y CustomTkinter, que se comunica con el nodo maestro a través de peticiones MQTT para gestionar el estado de la alarma y visualizar información relevante.
+- `Main_master`: Contains the code for the first ESP32 of the master node, responsible for communication with the application and control of devices such as the RFID module and the 4x4 keypad.
+- `Main_speaker`: Contains the code for the second ESP32 of the master node, responsible for communication with the slave node and activation of the DFPlayer Mini module for the alarm speaker.
+- `Main_slave`: Contains the code for the slave node, which detects motion and door openings, sending alerts to the master node.
+- `app`: Contains the code for the mobile application developed in Python with Tkinter and CustomTkinter libraries, which communicates with the master node via MQTT requests to manage the alarm state and display relevant information.
 
-## Funcionalidades Principales
+## Key Features
 
-- **Detección de Intrusos**: El nodo esclavo detecta movimiento o la apertura de puertas y envía alertas al nodo maestro.
-- **Activación y Desactivación de la Alarma**: El usuario puede activar o desactivar la alarma localmente utilizando un teclado 4x4 o mediante la aplicación móvil.
-- **Comunicación Inalámbrica**: El sistema se comunica a través de WiFi, tanto entre los nodos como con la aplicación móvil, utilizando peticiones MQTT.
-- **Ahorro de Energía**: Se implementa un modo Deep Sleep en el nodo esclavo para reducir el consumo de energía, despertándose mediante interrupciones externas.
-- **Interfaz Gráfica en la Aplicación**: La aplicación móvil proporciona una interfaz gráfica intuitiva para gestionar el estado de la alarma y visualizar información relevante.
+- **Intruder Detection**: The slave node detects motion or door openings and sends alerts to the master node.
+- **Alarm Activation and Deactivation**: The user can activate or deactivate the alarm locally using a 4x4 keypad or via the mobile application.
+- **Wireless Communication**: The system communicates via WiFi, both between nodes and with the mobile application, using MQTT requests.
+- **Energy Saving**: A Deep Sleep mode is implemented in the slave node to reduce energy consumption, waking up via external interruptions.
+- **Graphical Interface in the Application**: The mobile application provides an intuitive graphical interface for managing the alarm state and displaying relevant information.
